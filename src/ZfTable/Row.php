@@ -125,6 +125,8 @@ class Row extends AbstractElement
         $render = '';
 
         foreach ($data as $rowData) {
+		    $this->class = array('zf-data-row');
+					
             $this->setActualRow($rowData);
             $rowRender = '';
 
@@ -133,7 +135,9 @@ class Row extends AbstractElement
             }
 
             foreach ($this->decorators as $decorator) {
-                $decorator->render('');
+            	if ($decorator->validConditions()) {			
+					$decorator->render('');
+				}
             }
 
             $render .= sprintf('<tr %s>%s</tr>', $this->getAttributes(), $rowRender);
