@@ -125,8 +125,6 @@ class Row extends AbstractElement
         $render = '';
 
         foreach ($data as $rowData) {
-		    $this->class = array('zf-data-row');
-					
             $this->setActualRow($rowData);
             $rowRender = '';
 

@@ -31,7 +31,7 @@ class ClassDecorator extends AbstractRowDecorator
     {
         if (count($this->class) > 0) {
             foreach ($this->class as $class) {
-                $this->getRow()->addClass($class);
+                $this->getRow()->addVarClass($class);
             }
         }
         return $context;
