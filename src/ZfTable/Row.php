@@ -35,7 +35,7 @@ class Row extends AbstractElement
     /**
      *
      * @param string $name
-     * @param array $options
+     * @param array  $options
      * @return Decorator\Header\AbstractHeaderDecorator
      */
     public function addDecorator($name, $options = array())
@@ -69,7 +69,7 @@ class Row extends AbstractElement
     /**
      * Rendering all rows for table
      *
-     * @param string $type html, json, array
+     * @param  string $type html, json, array
      * @return string | array
      */
     public function renderRows($type = 'html')
@@ -89,7 +89,7 @@ class Row extends AbstractElement
     /**
      * Rendering rows as array
      *
-     * @param string $type
+     * @param  string $type
      * @return array
      */
     private function renderRowArray($type = 'normal')
@@ -133,9 +133,9 @@ class Row extends AbstractElement
             }
 
             foreach ($this->decorators as $decorator) {
-            	if ($decorator->validConditions()) {			
-					$decorator->render('');
-				}
+                if ($decorator->validConditions()) {
+                    $decorator->render('');
+                }
             }
 
             $render .= sprintf('<tr %s>%s</tr>', $this->getAttributes(), $rowRender);
